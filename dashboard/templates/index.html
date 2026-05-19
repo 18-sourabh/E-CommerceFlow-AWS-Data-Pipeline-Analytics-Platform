@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Brazil E-Commerce Analytics Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<div class="sidebar">
+    <div class="logo">🛒</div>
+    <h2>Brazil<br>E-Commerce</h2>
+
+    <a href="#overview">Overview</a>
+    <a href="#sales">Sales</a>
+    <a href="#customers">Customers</a>
+    <a href="#products">Products</a>
+    <a href="#delivery">Delivery</a>
+    <a href="#payments">Payments</a>
+</div>
+
+<div class="main">
+
+    <section id="overview">
+        <h1>Brazil E-Commerce Analytics Dashboard</h1>
+        <p class="subtitle">Sales, customers, products, payment, review, and delivery performance</p>
+
+        <div class="kpi-grid">
+            <div class="kpi-card">
+                <span>Total Sales</span>
+                <h2>${{ "{:,.2f}".format(kpis.total_sales or 0) }}</h2>
+            </div>
+
+            <div class="kpi-card">
+                <span>Total Orders</span>
+                <h2>{{ "{:,.0f}".format(kpis.total_orders or 0) }}</h2>
+            </div>
+
+            <div class="kpi-card">
+                <span>Total Items Sold</span>
+                <h2>{{ "{:,.0f}".format(kpis.total_items_sold or 0) }}</h2>
+            </div>
+
+            <div class="kpi-card">
+                <span>Avg Item Value</span>
+                <h2>${{ "{:,.2f}".format(kpis.avg_order_item_value or 0) }}</h2>
+            </div>
+
+            <div class="kpi-card">
+                <span>Avg Review Score</span>
+                <h2>{{ "{:.2f}".format(kpis.avg_review_score or 0) }}</h2>
+            </div>
+
+            <div class="kpi-card">
+                <span>Avg Delivery Days</span>
+                <h2>{{ "{:.1f}".format(kpis.avg_delivery_days or 0) }}</h2>
+            </div>
+        </div>
+    </section>
+
+    <section id="sales">
+        <h2>Sales Performance</h2>
+
+        <div class="chart-grid">
+            <div class="chart-card wide">
+                {{ charts.sales_trend | safe }}
+            </div>
+
+            <div class="chart-card">
+                {{ charts.state | safe }}
+            </div>
+
+            <div class="chart-card">
+                {{ charts.category | safe }}
+            </div>
+        </div>
+    </section>
+
+    <section id="customers">
+        <h2>Customer Insights</h2>
+
+        <div class="chart-grid">
+            <div class="chart-card wide">
+                {{ charts.customer | safe }}
+            </div>
+        </div>
+    </section>
+
+    <section id="products">
+        <h2>Product Insights</h2>
+
+        <div class="chart-grid">
+            <div class="chart-card wide">
+                {{ charts.product | safe }}
+            </div>
+        </div>
+    </section>
+
+    <section id="delivery">
+        <h2>Delivery Performance</h2>
+
+        <div class="chart-grid">
+            <div class="chart-card wide">
+                {{ charts.delivery | safe }}
+            </div>
+        </div>
+    </section>
+
+    <section id="payments">
+        <h2>Payment Analysis</h2>
+
+        <div class="chart-grid">
+            <div class="chart-card wide">
+                {{ charts.payment | safe }}
+            </div>
+        </div>
+    </section>
+
+    <div class="footer">
+        Source: Amazon Athena | Pipeline: Python, S3, Glue, dbt, Airflow | Dashboard: Flask + Plotly
+    </div>
+
+</div>
+
+</body>
+</html>

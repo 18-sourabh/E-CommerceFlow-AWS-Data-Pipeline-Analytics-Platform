@@ -1,0 +1,16 @@
+version: 2
+
+sources:
+  - name: brazil_ecommerce_staging
+    database: awsdatacatalog
+    schema: brazil_ecommerce_staging
+    tables:
+      - name: orders
+      - name: customers
+      - name: order_items
+      - name: payments
+      - name: products
+      - name: sellers
+      - name: reviews
+      - name: geolocation
+      - name: product_category_translation

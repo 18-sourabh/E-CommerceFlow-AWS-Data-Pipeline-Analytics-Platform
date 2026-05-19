@@ -1,0 +1,49 @@
+# Virtual environment
+venv/
+env/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Airflow
+airflow.db
+airflow/logs/
+airflow/*.pid
+
+# dbt
+target/
+dbt_packages/
+logs/
+
+# Environment variables
+.env
+
+# Mac system files
+.DS_Store
+
+# Jupyter
+.ipynb_checkpoints/
+
+# IDE files
+.vscode/
+.idea/
+
+# Temporary files
+*.tmp
+
+# Athena temporary query results
+*.csv.metadata
+
+# Local datasets generated during execution
+data/parquet/
+data/sample_output/
+
+# Build artifacts
+dist/
+build/
+
+# Cache
+.cache/
