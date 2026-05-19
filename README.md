@@ -181,15 +181,6 @@ Add:
 docs/screenshots/airflow_dag_success_run.png
 ```
 
-### Dashboard
-
-Add:
-
-```text
-dashboard/static/screenshots/dashboard.png
-```
-
----
 
 ## Future Improvements
 
