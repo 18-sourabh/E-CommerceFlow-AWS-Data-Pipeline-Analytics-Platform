@@ -10,29 +10,7 @@ The project ingests raw e-commerce data, processes it through a scalable ELT arc
 
 ## Architecture
 
-Raw CSV Data
-↓
-Python Ingestion Layer
-↓
-Amazon S3 (Raw Layer)
-↓
-Parquet Conversion
-↓
-Amazon S3 (Processed Layer)
-↓
-AWS Glue Data Catalog
-↓
-Amazon Athena
-↓
-dbt Transformations
-↓
-Star Schema Models
-↓
-Aggregate Business Tables
-↓
-Apache Airflow Orchestration
-↓
-Flask Analytics Dashboard
+![CommerceFlow AI Architecture](docs/architecture_diagram.jpeg)
 
 ---
 
@@ -94,17 +72,14 @@ Flask Analytics Dashboard
 ## Data Models
 
 ### Fact Tables
-
 - fact_order_items
 
 ### Dimension Tables
-
 - dim_customers
 - dim_products
 - dim_sellers
 
 ### Aggregate Tables
-
 - agg_monthly_sales
 - agg_sales_by_state
 - agg_sales_by_category
@@ -141,6 +116,8 @@ Flask Analytics Dashboard
 
 ## Airflow Pipeline
 
+![Airflow DAG Success Run](docs/airflow_dag_sucess_run.png)
+
 Current orchestration flow:
 
 ```text
@@ -163,25 +140,6 @@ skip      convert_raw_to_parquet
 
 ---
 
-## Project Screenshots
-
-### Architecture Diagram
-
-Add:
-
-```text
-docs/architecture_diagram.png
-```
-
-### Airflow DAG
-
-Add:
-
-```text
-docs/screenshots/airflow_dag_success_run.png
-```
-
-
 ## Future Improvements
 
 - Docker containerization
@@ -197,5 +155,4 @@ docs/screenshots/airflow_dag_success_run.png
 
 Sourabh Shinde
 
-GitHub:
-https://github.com/18-sourabh
+GitHub: https://github.com/18-sourabh
