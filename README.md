@@ -1,4 +1,4 @@
-# CommerceFlow AI — End-to-End E-Commerce Data Engineering Platform
+# E-CommerceFlow: AWS Data Pipeline & Analytics Platform
 
 ## Overview
 
