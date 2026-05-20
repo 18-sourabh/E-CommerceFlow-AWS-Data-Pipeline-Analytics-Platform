@@ -2,7 +2,7 @@
 
 ## Overview
 
-CommerceFlow AI is a production-style end-to-end data engineering and analytics platform built using AWS, dbt, Apache Airflow, and Flask.
+E-CommerceFlow is a production-style end-to-end data engineering and analytics platform built using AWS, dbt, Apache Airflow, and Flask.
 
 The project ingests raw e-commerce data, processes it through a scalable ELT architecture, builds analytical models using star-schema design, orchestrates workflows with Airflow, and delivers business insights through an interactive dashboard.
 
